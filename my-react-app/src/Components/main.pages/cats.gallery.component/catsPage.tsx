@@ -1,52 +1,22 @@
 import React from 'react'
 import './catsPage.css'
+import type { Cat } from '../../../serviceApi/getCats.service'
 
 interface CatsPageProps {
-    activeTab: string
+    cats: Cat[]
 }
 
 function catsPage(props: CatsPageProps) {
-    const { activeTab } = props
+    const { cats } = props
 
     return (
         <div className='cats-page-container'>
             <div className='cats-page-gallery'>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
-                <div className='cats-page-gallery-item'>
-                    <img src='https://placehold.co/225x225' alt='cat' />
-                </div>
+                {cats.map((cat) => (
+                    <div className='cats-page-gallery-item' key={cat.id}>
+                        <img src={cat.url} alt='cat' />
+                    </div>
+                ))}
             </div>
         </div>
   )

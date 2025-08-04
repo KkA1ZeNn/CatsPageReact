@@ -1,0 +1,20 @@
+import axios from 'axios'
+
+export interface Cat {
+    id: string
+    url: string
+    width: number
+    height: number
+}
+
+const getCats = async () => {
+    try {
+        const response = await axios.get('https://api.thecatapi.com/v1/images/search?limit=10')
+        return response.data as Cat[]
+    } catch (error) {
+        console.error('Error fetching cats:', error)
+        return []
+    }
+}
+
+export default getCats
