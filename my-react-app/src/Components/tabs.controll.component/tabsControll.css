@@ -1,0 +1,30 @@
+.tabs-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+}
+
+.tab-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 23px;
+    box-sizing: border-box;
+    background-color: inherit;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.tab-item.active {
+    background-color: #1E88E5;
+    color: #FFFFFF;
+}
