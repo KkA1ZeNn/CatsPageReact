@@ -10,9 +10,43 @@ function catsPage(props: CatsPageProps) {
 
     return (
         <div className='cats-page-container'>
-            <div className='cats-page-header'>
-                {activeTab === 'allCats' && <div className='cats-page-header-title'>Все котики</div>}
-                {activeTab === 'favoriteCats' && <div className='cats-page-header-title'>Любимые котики</div>}
+            <div className='cats-page-gallery'>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
+                <div className='cats-page-gallery-item'>
+                    <img src='https://placehold.co/225x225' alt='cat' />
+                </div>
             </div>
         </div>
   )
