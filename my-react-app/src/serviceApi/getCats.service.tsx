@@ -7,9 +7,9 @@ export interface Cat {
     height: number
 }
 
-const getCats = async () => {
+const getCats = async (page: number) => {
     try {
-        const response = await axios.get('https://api.thecatapi.com/v1/images/search?limit=10')
+        const response = await axios.get(`https://api.thecatapi.com/v1/images/search?limit=10&page=${page}`)
         return response.data as Cat[]
     } catch (error) {
         console.error('Error fetching cats:', error)

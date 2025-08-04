@@ -1,9 +1,16 @@
 .cats-page-container { 
     width: 100%;
     height: 100%;
+    background-color: #FFFFFF;
+    flex: 1;
+}
+
+.cats-page-gallery-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
     padding: 48px 64px;
     box-sizing: border-box;
-    background-color: #FFFFFF;
 }
 
 .cats-page-gallery {
@@ -37,4 +44,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.cats-page-loading {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 600;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
