@@ -1,7 +1,6 @@
 import './App.css'
 import TabsControll from './Components/tabs.controll.component/tabsControll'
-import AllCatsPage from './Components/main.pages/all.cats.page.component/allCatsPage'
-import FavCatsPage from './Components/main.pages/favourite.cats.page.component/favCatsPage'
+import CatsPage from './Components/main.pages/cats.gallery.component/catsPage'
 import { useState } from 'react'
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
   return (
     <div className='app-container'>
       <TabsControll activeTab={activeTab} setActiveTab={setActiveTab} />
-      {activeTab === 'allCats' && <AllCatsPage />}
-      {activeTab === 'favoriteCats' && <FavCatsPage />}
+      <CatsPage activeTab={activeTab} />
     </div>
   )
 }
