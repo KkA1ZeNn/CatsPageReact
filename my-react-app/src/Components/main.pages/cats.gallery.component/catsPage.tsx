@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import './catsPage.css'
 import getCats, { type Cat } from '../../../serviceApi/getCats.service'
 import Pagination from '../../pagination.component/pagination'
+import Download from '../../downLoading.component/download'
 
 function CatsPage() {
     const [cats, setCats] = useState<Cat[]>([])
@@ -87,7 +88,7 @@ function CatsPage() {
     return (
         <div className='cats-page-container'>
             <div className='cats-page-gallery-container'>
-                { isLoading ? <div className='cats-page-loading'>Loading...</div> : (
+                { isLoading ? <Download /> : (
                     <div className='cats-page-gallery'>
                         {cats.map((cat) => (
                             <div className={`cats-page-gallery-item ${cat.isFavorite ? 'cats-page-gallery-item-favorite' : ''}`} key={cat.id} onClick={() => handleFavoriteClick(cat)}>

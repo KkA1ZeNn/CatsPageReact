@@ -1,6 +1,6 @@
 .pagination-container {
     position: fixed;
-    bottom: 1.4%;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 192px;
