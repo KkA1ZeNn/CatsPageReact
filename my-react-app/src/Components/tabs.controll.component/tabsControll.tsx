@@ -1,23 +1,33 @@
-import React from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './tabsControll.css'
 
-interface TabsControllProps {
-    activeTab: string
-    setActiveTab: (tab: string) => void
-}
+function TabsControl() {
+    const navigate = useNavigate()
+    const location = useLocation()
 
-function tabsControll(props: TabsControllProps) {
-    const { activeTab, setActiveTab } = props
+    // Определяем активную вкладку по текущему пути
+    const isAllCatsActive = location.pathname === '/allcats'
+    const isFavoritesActive = location.pathname === '/favorites'
 
     return (
         <div className='tabs-wrapper'>
             <div className='tabs-container'>
-                <div className={`tab-item ${activeTab === 'allCats' ? 'active' : ''}`} onClick={() => setActiveTab('allCats')}>Все котики</div>
-                <div className={`tab-item ${activeTab === 'favoriteCats' ? 'active' : ''}`} onClick={() => setActiveTab('favoriteCats')}>Любимые котики</div>
+                <div 
+                    className={`tab-item ${isAllCatsActive ? 'active' : ''}`} 
+                    onClick={() => navigate('/allcats')}
+                >
+                    Все котики
+                </div>
+                <div 
+                    className={`tab-item ${isFavoritesActive ? 'active' : ''}`} 
+                    onClick={() => navigate('/favorites')}
+                >
+                    Любимые котики
+                </div>
             </div>
             
         </div>
     )
 }
 
-export default tabsControll
+export default TabsControl
