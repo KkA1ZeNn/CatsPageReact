@@ -97,7 +97,7 @@ function CatsPage() {
                     </div>
                 )}
             </div>
-            {isLoading || isFavoritesPage ? null : <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />}
+            {isFavoritesPage ? null : <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} />}
         </div>
     )
 }
