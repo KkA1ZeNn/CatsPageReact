@@ -59,3 +59,7 @@
     align-items: center;
     z-index: 1000;
 }
+
+.cats-page-gallery-item-favorite {
+    border: 2px solid red;
+}
