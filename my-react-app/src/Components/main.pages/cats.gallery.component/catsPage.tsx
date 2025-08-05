@@ -4,6 +4,7 @@ import './catsPage.css'
 import getCats, { type Cat } from '../../../serviceApi/getCats.service'
 import Pagination from '../../pagination.component/pagination'
 import Download from '../../downLoading.component/download'
+import LikeButton from '../../likeButton.component/likeButton'
 
 function CatsPage() {
     const [cats, setCats] = useState<Cat[]>([])
@@ -39,7 +40,7 @@ function CatsPage() {
     useEffect(() => {
         const savedFavorites = loadFavoritesFromLocalStorage()
         setFavoritesCats(savedFavorites)
-    }, []) // Только загружаем из localStorage, отображением занимается другой useEffect 
+    }, [])
 
     useEffect(() => {
         setCurrentPage(1)
@@ -91,8 +92,9 @@ function CatsPage() {
                 { isLoading ? <Download /> : (
                     <div className='cats-page-gallery'>
                         {cats.map((cat) => (
-                            <div className={`cats-page-gallery-item ${cat.isFavorite ? 'cats-page-gallery-item-favorite' : ''}`} key={cat.id} onClick={() => handleFavoriteClick(cat)}>
+                            <div className='cats-page-gallery-item' key={cat.id}>
                                 <img src={cat.url} alt='cat' />
+                                <LikeButton isActive={cat.isFavorite} onClickFunction={() => handleFavoriteClick(cat)} />
                             </div>
                         ))}
                     </div>

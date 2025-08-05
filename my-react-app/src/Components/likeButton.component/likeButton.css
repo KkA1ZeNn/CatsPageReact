@@ -1,0 +1,16 @@
+.like-button-container {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    bottom: 19px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.like-button-container img {
+    display: none;
+}
